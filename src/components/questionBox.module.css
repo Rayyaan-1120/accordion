@@ -1,0 +1,47 @@
+.questionBox{
+    width: 90%;
+    margin: 10px auto;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    height: 60px;
+}
+
+.questionBox .questionText{
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+}
+
+.questionBox .booleanClass{
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(208, 43, 7, 1);
+}
+.questionBox .booleanClass[aria-role="true"]{
+    color:rgba(15, 221, 35, 1);
+}
+
+@media screen and (max-width:600px) {
+
+    .questionBox{
+    width: 95%;
+    padding: 4px 10px;
+    gap: 10;
+    }
+
+    .questionBox .booleanClass{
+    font-size: 13px;
+    }
+
+   .questionBox .questionText{
+    font-weight: 500;
+    font-size: 13px;
+    color: #fff;
+    width: 85%;
+
+}
+
+}

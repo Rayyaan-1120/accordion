@@ -1,0 +1,225 @@
+.accordion {
+  width: 95%;
+  background: rgba(11, 26, 38, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 15px auto;
+  min-height: 80px;
+}
+
+.wrapper {
+  display: grid;
+
+  width: 100%;
+
+  place-items: center;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+  min-height: 80px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.titleContainer .gradientDiv {
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
+  display: flex;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.titleDiv {
+  margin-left: 8px;
+}
+
+.titleDiv h3 {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  margin: 7px auto;
+}
+.titleDiv p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  margin: 7px auto;
+}
+
+.ratingContainer {
+  width: 270px;
+  /* padding: 3px; */
+  margin-left: 20px;
+  margin-top: -14px;
+}
+
+.ratingContainer .ratingStat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ratingStat p,
+.ratingStat span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+}
+
+.ratingBar {
+  width: 100%;
+  height: 8px;
+  border-radius: 20px;
+  margin-top: 2px;
+  background: rgba(136, 136, 136, 0.1);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ratingBarFilled {
+  background-color: rgba(0, 211, 233, 1);
+  height: 100%;
+  border-radius: 20px;
+}
+
+.collapseButtonContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.collapseButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 150px;
+  height: 40px;
+  background: rgba(1, 9, 16, 0.9);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.collapseButton p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+}
+
+.collapseButton img {
+  padding-right: 14px;
+  margin-left: 8px;
+  transition: all 0.35s ease;
+  width: 15px;
+  height: 15px;
+  align-self: center;
+}
+
+.collapseButton img[aria-expanded="true"] {
+  transform: rotateX(180deg);
+}
+
+.accordionContent {
+  overflow-y: hidden;
+  max-height: 10000px;
+  width: 100%;
+  transition: max-height 1s ease-in-out;
+}
+
+.accordionContent[aria-expanded="true"] {
+  max-height: 0px;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+@media screen and (max-width: 900px) {
+  .ratingContainer {
+    width: 100%;
+    margin-left: 0px;
+
+  }
+  .collapseButtonContainer {
+    width: 100%;
+  }
+  .wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      place-items: left;
+      place-content: left;
+      gap: 15px;
+  }
+  .titleContainer{
+    grid-column: 1 / span 2;
+  }
+}
+
+@media screen and (max-width: 500px) {
+.wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .collapseButtonContainer {
+    width: 140px;
+  }
+
+  .accordion {
+    width: 90%;
+    padding: 8px 10px;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+.wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .ratingContainer {
+    grid-column: 1 / span 2;
+
+  }
+
+  .titleDiv h3 {
+    font-size: 13px;
+  }
+
+  .titleDiv p {
+    font-size: 13px;
+  }
+ 
+  .collapseButton{
+    width: 110px;
+  }
+
+  .collapseButton p{
+     font-size: 12px;
+  }
+
+  .collapseButton img{
+    padding-right: 10px;
+  }
+
+  .titleContainer .gradientDiv{
+    width: 50px;
+    height: 50px;
+  }
+
+.ratingStat p{
+    font-size: 12px;
+}
+
+
+}
+
+@media screen and (max-width: 320px) {
+  .accordion{
+    width: 95%;
+  }
+}
